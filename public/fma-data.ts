@@ -100,6 +100,3 @@ export const data: Character[] = [
 ];
 
 
-// export default {
-//   CharacterData,
-// }
