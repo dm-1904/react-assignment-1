@@ -3,12 +3,36 @@ import './style.css'
 import './header.css'
 import './character-ratings.css'
 import './character-cards.css'
+import { data } from '../public/fma-data'
+
 
 function App() {
 
+  const dataSortedByVotes = data.sort((a, b) => {
+    if (a.votes < b.votes) {
+      return 1
+    } else if (a.votes > b.votes) {
+      return -1
+    } else {
+      return 0
+    }
+  })
+
+  // const example = dataSortedByVotes.map(item => <li key={item.name}>{item.name}</li>)
+  // const tableRows = dataSortedByVotes.map((item) => {
+  //   <tr>
+  //     <td key={item.name}>{item.name}</td>
+  //     <td>{item.skillset}</td>
+  //     <td>{item.votes}</td>
+  //   </tr>
+
+  // })
 
   return (
+
 <body>
+  {/* {console.log(dataSortedByVotes)} */}
+
     <header>
       <h1>Fullmetal Alchemist</h1>
       <nav>
@@ -19,13 +43,33 @@ function App() {
     </header>
     <section id="character-ratings">
       <h4>Top Characters</h4>
+      {/* <ol>{example}</ol> */}
       <table className='table'>
         <tr>
           <th>Name</th>
           <th>Skillset</th>
           <th>Votes</th>
         </tr>
-        <tr className="dark">
+
+          {dataSortedByVotes.slice(0, 5).map((el, index) => (
+            <tr key={el.name} className={index % 2 === 0 ? 'dark' : 'light'}>
+              <td key={el.name}>{el.name}</td>
+              <td key={el.skillset}>{el.skillset}</td>
+              <td key={el.votes}>{el.votes}</td>
+            </tr>
+            ))}
+
+
+          {/* {console.log(dataSortedByVotes.map(el => el.name))} */}
+          {/* {dataSortedByVotes.map((row) => {
+            <tr key={row.name}>
+              <td>{row.name}</td>
+              <td>{row.skillset}</td>
+              <td>{row.votes}</td>
+            </tr>
+          })} */}
+
+        {/* <tr className="dark">
           <td>Alfonse Elrich</td>
           <td>Being Loveable, Alchemy</td>
           <td>110</td>
@@ -49,7 +93,7 @@ function App() {
           <td>Nina</td>
           <td>Loving Dogs, being adorable</td>
           <td>93</td>
-        </tr>
+        </tr> */}
       </table>
     </section>
     <section id="character-cards">
