@@ -1,5 +1,10 @@
 import './character-cards.css'
 import { Component } from 'react'
+import "./header.css"
+import "./reset.css"
+import "./App.css"
+import "./character-cards.css"
+import "./index.css"
 
 
 export class ClassCharacterCards extends Component {
@@ -22,9 +27,3 @@ export class ClassCharacterCards extends Component {
     )
   }
 }
-
-
-
-
-
-

@@ -1,8 +1,9 @@
 import "./header.css"
 
+
 export const Header = () => {
   return (
-    <header>
+    <header className="header">
     <h1>Fullmetal Alchemist</h1>
     <nav>
       <li>about us</li>
