@@ -24,11 +24,18 @@
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbjOHCw2pwjjUvQW4HsEctQyfzWcDmMAjr4ay6xj_zEZVpJQjm_JPdlkb3Lv64vVqRrQ0&usqp=CAU);
 }
 
-.table tr {
-  height: 35px;
+.table .tr th {
+  padding: 8px;
+  font-weight: bold;
+  border: 1px solid #aaaaaa;
 }
 
-td,
+.table tr {
+  height: 35px;
+
+}
+
+.table td,
 th {
   border: 1px solid #aaaaaa;
   text-align: left;
