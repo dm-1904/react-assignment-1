@@ -1,12 +1,6 @@
 // import { data } from '../public/fma-data'
 import {CharacterTableContents} from "./character-table-content"
 import './character-ratings.css'
-import "./header.css"
-import "./reset.css"
-import "./App.css"
-import "./character-cards.css"
-import "./index.css"
-
 
 
 
