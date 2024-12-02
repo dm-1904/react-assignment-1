@@ -1,21 +1,26 @@
-// import { data } from '../public/fma-data'
-import {CharacterTableContents} from "./character-table-content"
+import { CharacterTableRow } from "./character-table-content"
 import './character-ratings.css'
 
 
 
-export const CharacterTable = ({data}) => {
+export const CharacterTable = ({ data }) => {
+  const dataCopyForTable = data.toSorted((a, b) => b.votes - a.votes)
   return (
     <section id="character-ratings">
       <h4>Top Characters</h4>
       <table className='table'>
-        <tr className='tr'>
-          <th>Name</th>
-          <th>Skillset</th>
-          <th>Votes</th>
-        </tr>
+        <thead>
+          <tr className='tr'>
+            <th>Name</th>
+            <th>Skillset</th>
+            <th>Votes</th>
+          </tr>
+        </thead>
+
         <tbody>
-          <CharacterTableContents data={data}/>
+          {dataCopyForTable.slice(0, 5).map((el, index) => (
+            <CharacterTableRow key={`row-${index}`} data={el} index={index} />
+          ))}
         </tbody>
 
       </table>

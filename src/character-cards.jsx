@@ -1,6 +1,6 @@
 import './character-cards.css'
 import { Component } from 'react'
-import { CharacterCardsContent } from './character-cards-content'
+import { CharacterCard } from './character-cards-content'
 
 
 
@@ -8,10 +8,12 @@ export class ClassCharacterCards extends Component {
 
 
   render() {
-
+    const { data } = this.props
     return (
       <section id="character-cards">
-        <CharacterCardsContent data={this.props.data}/>
+        {data.map((el) => (
+        <CharacterCard key={el.name} cardData={el} />
+        ))}
       </section>
     )
   }
